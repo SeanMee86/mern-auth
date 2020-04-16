@@ -1,6 +1,7 @@
 const JwtStrategy = require("passport-jwt").Strategy;
 const { ExtractJwt } = require("passport-jwt");
-const User = require('mongoose').model("users");
+// const userSchema = require('../models/User');
+const User = require('../models/User');
 const keys = require("../config/keys");
 const opts = {};
 

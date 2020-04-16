@@ -5,6 +5,7 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { loginUser } from "../../actions/authActions";
 import classnames from "classnames";
+import {getUsers} from "../../utils/getUsers";
 
 class Login extends Component {
 
@@ -75,13 +76,13 @@ class Login extends Component {
                                     id="email"
                                     type="email"
                                     className={classnames("", {
-                                        invalid: errors.email || errors.emailnotfound
+                                        invalid: errors.email || errors.emailNotFound
                                     })}
                                 />
                                 <label htmlFor="email">Email</label>
                                 <span className="red-text">
                                     {errors.email}
-                                    {errors.emailnotfound}
+                                    {errors.emailNotFound}
                                 </span>
                             </div>
                             <div className="input-field col s12">
@@ -92,13 +93,13 @@ class Login extends Component {
                                     id="password"
                                     type="password"
                                     className={classnames("", {
-                                        invalid: errors.password || errors.passwordincorrect
+                                        invalid: errors.password || errors.passwordIncorrect
                                     })}
                                 />
                                 <label htmlFor="password">Password</label>
                                 <span className="red-text">
                                     {errors.password}
-                                    {errors.passwordincorrect}
+                                    {errors.passwordIncorrect}
                                 </span>
                             </div>
                             <div className="col s12" style={{ paddingLeft: "11.250px" }}>
@@ -116,6 +117,16 @@ class Login extends Component {
                                 </button>
                             </div>
                         </form>
+                        <button
+                            onClick={getUsers}
+                            className="btn btn-large waves-effect waves-light hoverable blue accent-3"
+                            style={{
+                                width: "150px",
+                                borderRadius: "3px",
+                                letterSpacing: "1.5px",
+                                marginTop: "1rem"
+                            }}
+                        >Get Users</button>
                     </div>
                 </div>
             </div>

@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { logoutUser } from "../../actions/authActions";
+import {getUsers} from "../../utils/getUsers";
 
 class Dashboard extends Component {
 
@@ -35,6 +36,16 @@ class Dashboard extends Component {
                         >
                             Logout
                         </button>
+                        <button
+                            onClick={getUsers}
+                            className="btn btn-large waves-effect waves-light hoverable blue accent-3"
+                            style={{
+                                width: "150px",
+                                borderRadius: "3px",
+                                letterSpacing: "1.5px",
+                                marginTop: "1rem"
+                            }}
+                        >Get Users</button>
                     </div>
                 </div>
             </div>
